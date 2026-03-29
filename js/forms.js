@@ -23,9 +23,9 @@
 
 /* ── EmailJS Config — REPLACE THESE ────────────────────────── */
 const EMAILJS_CONFIG = {
-  publicKey:   'YOUR_PUBLIC_KEY',          // e.g. 'abc123XYZ'
-  serviceId:   'YOUR_SERVICE_ID',          // e.g. 'service_xxxxxx'
-  templateId:  'YOUR_TEMPLATE_ID',         // e.g. 'template_xxxxxx'
+  publicKey:   'J0n45L6tCBi7vbzMp',       // e.g. 'abc123XYZ'
+  serviceId:   'service_6eo6vc2',         // e.g. 'service_xxxxxx'
+  templateId:  'template_y7q5t2o',        // e.g. 'template_xxxxxx'
 };
 
 /* ── WhatsApp Number — REPLACE ──────────────────────────────── */
@@ -83,6 +83,9 @@ function handleForm(formId, msgId, buildParams) {
 
     } catch (err) {
       console.error('EmailJS error:', err);
+      console.log('Service ID:', EMAILJS_CONFIG.serviceId);
+      console.log('Template ID:', EMAILJS_CONFIG.templateId);
+      console.log('Public Key:', EMAILJS_CONFIG.publicKey);
       msgEl.textContent = "✗ Something went wrong. Please call us directly or WhatsApp.";
       msgEl.className   = 'form-message error';
     } finally {
