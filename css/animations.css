@@ -1,0 +1,207 @@
+/* ============================================================
+   NESTIFY INTERIORS — animations.css
+   Custom animations and scroll transitions
+   ============================================================ */
+
+/* ── WhatsApp Pulse ─────────────────────────────────────────── */
+@keyframes wa-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70%  { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.whatsapp-float {
+  animation: wa-pulse 2.5s ease-out infinite;
+}
+
+/* ── Hero text entrance ─────────────────────────────────────── */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-eyebrow {
+  animation: hero-rise 0.8s ease forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.hero h1 {
+  animation: hero-rise 0.9s ease forwards;
+  animation-delay: 0.45s;
+  opacity: 0;
+}
+
+.hero-sub {
+  animation: hero-rise 0.9s ease forwards;
+  animation-delay: 0.65s;
+  opacity: 0;
+}
+
+.hero-actions {
+  animation: hero-rise 0.9s ease forwards;
+  animation-delay: 0.85s;
+  opacity: 0;
+}
+
+.hero-scroll {
+  animation: hero-rise 1s ease forwards;
+  animation-delay: 1.2s;
+  opacity: 0;
+}
+
+/* ── Scroll line animation ──────────────────────────────────── */
+@keyframes scroll-line {
+  0%, 100% { transform: scaleY(1); opacity: 1; }
+  50%       { transform: scaleY(0.4); opacity: 0.3; }
+}
+
+.hero-scroll-line {
+  animation: scroll-line 2s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+/* ── Gold shimmer on hover ──────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.btn-primary:hover {
+  background: linear-gradient(
+    90deg,
+    var(--clr-gold) 0%,
+    var(--clr-gold-light) 50%,
+    var(--clr-gold) 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer 1.5s linear infinite;
+}
+
+/* ── Page transition fade ───────────────────────────────────── */
+@keyframes page-fade {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+main {
+  animation: page-fade 0.5s ease forwards;
+}
+
+/* ── Number counter animation ───────────────────────────────── */
+.stat-number.counting {
+  transition: all 0.1s;
+}
+
+/* ── Image reveal ───────────────────────────────────────────── */
+@keyframes image-reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0% 0 0);
+  }
+}
+
+/* ── Gold line draw ─────────────────────────────────────────── */
+@keyframes line-draw {
+  from { width: 0; }
+  to   { width: 60px; }
+}
+
+.gold-divider[data-aos="line-draw"] {
+  animation: line-draw 0.8s ease forwards;
+}
+
+/* ── Fade up variants (supplement AOS) ─────────────────────── */
+@keyframes fade-up-sm {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-up {
+  animation: fade-up-sm 0.6s ease forwards;
+}
+
+/* ── Card hover lift shadow ─────────────────────────────────── */
+.service-card,
+.portfolio-card,
+.testimonial-card,
+.pricing-card {
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 0.3s ease,
+              box-shadow 0.35s ease;
+}
+
+/* ── Stagger utility (used via JS adding delay) ─────────────── */
+.stagger-child:nth-child(1) { animation-delay: 0s; }
+.stagger-child:nth-child(2) { animation-delay: 0.1s; }
+.stagger-child:nth-child(3) { animation-delay: 0.2s; }
+.stagger-child:nth-child(4) { animation-delay: 0.3s; }
+.stagger-child:nth-child(5) { animation-delay: 0.4s; }
+.stagger-child:nth-child(6) { animation-delay: 0.5s; }
+
+/* ── Nav hover underline slide ──────────────────────────────── */
+.nav-links a::after {
+  transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ── Mobile menu fade-slide ─────────────────────────────────── */
+@keyframes mobile-menu-in {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.nav-mobile.open {
+  animation: mobile-menu-in 0.3s ease forwards;
+}
+
+/* ── Filter button active transition ───────────────────────── */
+.filter-btn {
+  transition: background 0.25s ease,
+              border-color 0.25s ease,
+              color 0.25s ease,
+              transform 0.2s ease;
+}
+
+.filter-btn:active {
+  transform: scale(0.97);
+}
+
+/* ── Pricing card featured glow ─────────────────────────────── */
+.pricing-card.featured {
+  box-shadow: 0 0 60px rgba(201, 168, 76, 0.12);
+}
+
+/* ── Loading spinner ────────────────────────────────────────── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+/* ── Before/After handle pulse ──────────────────────────────── */
+@keyframes ba-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.4); }
+  50%       { box-shadow: 0 0 0 8px rgba(201,168,76,0); }
+}
+
+.ba-handle::before {
+  animation: ba-glow 2s ease-in-out infinite;
+}
