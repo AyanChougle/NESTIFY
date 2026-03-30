@@ -99,12 +99,12 @@ function handleForm(formId, msgId, buildParams) {
 /* ── Contact Form ───────────────────────────────────────────── */
 function initContactForm() {
   handleForm('contactForm', 'contactMsg', fd => ({
-    from_name:   fd.get('name')        || '',
-    from_phone:  fd.get('phone')       || '',
-    reply_to:    fd.get('email')       || '',
+    name:        fd.get('name')        || '',
+    phone:       fd.get('phone')       || '',
+    email:       fd.get('email')       || '',
     budget:      fd.get('budget')      || '',
-    requirement: fd.get('requirement') || '',
-    page_source: 'Contact Page',
+    message:     fd.get('requirement') || '',
+    time:        new Date().toLocaleString(),
   }));
 }
 
