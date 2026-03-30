@@ -23,9 +23,9 @@
 
 /* ── EmailJS Config — REPLACE THESE ────────────────────────── */
 const EMAILJS_CONFIG = {
-  publicKey:   'J0n45L6tCBi7vbzMp',       // e.g. 'abc123XYZ'
-  serviceId:   'service_6eo6vc2',         // e.g. 'service_xxxxxx'
-  templateId:  'template_aoneyau',        // e.g. 'template_xxxxxx'
+  publicKey:   'SUlPmiB1foFK3GWdy',       // e.g. 'abc123XYZ'
+  serviceId:   'service_sdx2ngm',         // e.g. 'service_xxxxxx'
+  templateId:  'template_rbjajhm',        // e.g. 'template_xxxxxx'
 };
 
 /* ── WhatsApp Number — REPLACE ──────────────────────────────── */
